@@ -1,13 +1,20 @@
 const mongoose= require ("mongoose");
+const authValidator = require("../validators/student.validator");
 
-const userSchema = mongoose.Schema(
+
+const studentSchema = mongoose.Schema(
     {
-        name: String,
-        course: String
+     name: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  city: { type: String, required: true },
+  course: { type: String, required: true },
+phone: { type: String, required: true },
 
+
+  
     }
 )
 
-const User = mongoose.model("user",userSchema);
+const Student = mongoose.model("student",studentSchema);
 
-module.exports = User;
+module.exports = Student;
