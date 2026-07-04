@@ -8,15 +8,7 @@ const verifyToken = require("../middleware/verifyToken");
 
 const authValidator = require("../validators/student.validator");
 
-
-
-
-
-router.get(
-    "/student",
-    verifyToken,
-    studentController.getAllStudents
-);
+router.get("/student",verifyToken, studentController.getAllStudents);
 router.post("/student", verifyToken, studentController.createStudent);
 
 router.get("/student/:id", verifyToken, studentController.getStudentById);

@@ -4,6 +4,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const rateLimit = require('express-rate-limit');
 const slowDown = require('express-slow-down');
+const authRoutes = require('./routes/user');
+const logger = require("./config/logger");
 
 
 const userRoute= require("./routes/student.route");
@@ -46,6 +48,7 @@ mongoose.connect(process.env.MONGO_DB_URI).then( ()=>{
 });
 
 app.use("/API/user", userRoute);
+app.use("/API/auth", authRoutes);
 
 app.listen(process.env.PORT, ()=>{
     console.log("connected to server successfully!!")

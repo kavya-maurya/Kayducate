@@ -1,5 +1,5 @@
 const mongoose= require ("mongoose");
-const authValidator = require("../validators/student.validator");
+
 
 
 const studentSchema = mongoose.Schema(

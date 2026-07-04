@@ -1,0 +1,18 @@
+2026-07-02 19:11:13 [INFO] Login attempt for email: kavyamaurya1101@example.com
+2026-07-02 19:11:13 [ERROR] Login error: name is not defined
+2026-07-02 19:11:26 [INFO] Registration attempt for email: kavyamaurya123456@example.com
+2026-07-02 19:11:27 [INFO] User registered successfully: kavyamaurya123456@example.com
+2026-07-02 19:12:00 [INFO] Registration attempt for email: kavyamaurya1101@example.com
+2026-07-02 19:12:01 [INFO] User registered successfully: kavyamaurya1101@example.com
+2026-07-02 19:12:05 [INFO] Login attempt for email: kavyamaurya1101@example.com
+2026-07-02 19:12:05 [ERROR] Login error: name is not defined
+2026-07-02 19:12:10 [INFO] Login attempt for email: kavyamaurya1101@example.com
+2026-07-02 19:12:10 [ERROR] Login error: name is not defined
+2026-07-02 19:12:19 [INFO] Login attempt for email: kavyamaurya1101@example.com
+2026-07-02 19:12:19 [ERROR] Login error: name is not defined
+2026-07-02 19:15:46 [INFO] Login attempt for email: kavyamaurya1101@example.com
+2026-07-02 19:15:46 [ERROR] Login error: name is not defined
+2026-07-02 19:18:25 [INFO] Login attempt for email: kavyamaurya1101@example.com
+2026-07-02 19:18:26 [ERROR] Login error: Missing credentials for "PLAIN"
+2026-07-02 19:20:52 [INFO] Login attempt for email: kavyamaurya1101@example.com
+2026-07-02 19:20:55 [INFO] Login successful for user: kavyamaurya1101@example.com
