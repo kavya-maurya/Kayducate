@@ -16,3 +16,19 @@
 2026-07-02 19:18:26 [ERROR] Login error: Missing credentials for "PLAIN"
 2026-07-02 19:20:52 [INFO] Login attempt for email: kavyamaurya1101@example.com
 2026-07-02 19:20:55 [INFO] Login successful for user: kavyamaurya1101@example.com
+2026-07-05 14:20:54 [INFO] Login attempt for email: kavyamaurya1101@example.com
+2026-07-05 14:20:55 [INFO] Login successful for user: kavyamaurya1101@example.com
+2026-07-05 14:29:57 [INFO] Login attempt for email: kavyamaurya269@gmail.com
+2026-07-05 14:29:57 [WARN] Login failed: user not found for email kavyamaurya269@gmail.com
+2026-07-05 14:30:46 [INFO] Registration attempt for email: kavyamaurya269@gmail.com
+2026-07-05 14:30:47 [INFO] User registered successfully: kavyamaurya269@gmail.com
+2026-07-05 14:31:11 [INFO] Login attempt for email: kavyamaurya269@gmail.com
+2026-07-05 14:31:12 [INFO] Login successful for user: kavyamaurya269@gmail.com
+2026-07-05 14:46:53 [INFO] Registration attempt for email: kavyamaurya269@example.com
+2026-07-05 14:46:55 [INFO] User registered successfully: kavyamaurya269@example.com
+2026-07-05 14:47:11 [INFO] Login attempt for email: kavyamaurya269@example.com
+2026-07-05 14:47:12 [INFO] Login successful for user: kavyamaurya269@example.com
+2026-07-05 14:50:51 [INFO] Login attempt for email: kavyamaurya269@gmail.com
+2026-07-05 14:50:52 [INFO] Login successful for user: kavyamaurya269@gmail.com
+2026-07-05 14:52:21 [INFO] Login attempt for email: kavyamaurya269@example.com
+2026-07-05 14:52:22 [INFO] Login successful for user: kavyamaurya269@example.com

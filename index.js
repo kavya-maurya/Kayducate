@@ -9,6 +9,8 @@ const logger = require("./config/logger");
 
 
 const userRoute= require("./routes/student.route");
+const contactRoute= require("./routes/contact.route");
+
 const helmet = require("helmet");
 
 
@@ -49,6 +51,8 @@ mongoose.connect(process.env.MONGO_DB_URI).then( ()=>{
 
 app.use("/API/user", userRoute);
 app.use("/API/auth", authRoutes);
+app.use("/API/contact", contactRoute);
+
 
 app.listen(process.env.PORT, ()=>{
     console.log("connected to server successfully!!")
