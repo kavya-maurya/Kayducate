@@ -7,10 +7,11 @@ const router = express.Router();
 const contactController = require("../controllers/contact.Controller");
 
 const verifyToken = require("../middleware/verifyToken");
+const verifyAdmin = require("../middleware/verifyAdmin");
 
 
-router.get("/contact",verifyToken, contactController.getAllContacts);
-router.post("/contact", verifyToken, contactController.createContact);
+router.get("/contact",verifyToken,verifyAdmin, contactController.getAllContacts);
+router.post("/contact", verifyToken,verifyAdmin, contactController.createContact);
 
 router.get("/contact/:id", verifyToken, contactController.getContactById);
 

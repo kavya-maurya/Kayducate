@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const transporter = require("../config/mail");
 const nodemailer = require("nodemailer");
-
+const verifyAdmin = require("../middleware/verifyAdmin");
 
 
 
@@ -33,7 +33,7 @@ module.exports = {
         return res.status(400).json({ message: "Credentials are not correct" });
       }
 
-      const token = jwt.sign({ id: user._id, email: user.email }, process.env.JWT_SECRET, { expiresIn: "24h" });
+      const token = jwt.sign({ id: user._id, email: user.email,role: user.role }, process.env.JWT_SECRET, { expiresIn: "24h" });
       logger.info(`Login successful for user: ${user.email}`);
 
       return res.status(200).json({ message: "Login successful", token: token, user: user });
