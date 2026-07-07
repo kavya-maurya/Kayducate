@@ -34,3 +34,9 @@
 2026-07-05 14:52:22 [INFO] Login successful for user: kavyamaurya269@example.com
 2026-07-05 15:34:34 [INFO] Login attempt for email: kavyamaurya269@gmail.com
 2026-07-05 15:34:35 [INFO] Login successful for user: kavyamaurya269@gmail.com
+2026-07-06 23:01:01 [INFO] Registration attempt for email: admin@gmail.com
+2026-07-06 23:01:02 [INFO] User registered successfully: admin@gmail.com
+2026-07-06 23:01:36 [INFO] Login attempt for email: admin@gmail.com
+2026-07-06 23:01:37 [INFO] Login successful for user: admin@gmail.com
+2026-07-06 23:04:48 [INFO] Login attempt for email: admin@gmail.com
+2026-07-06 23:04:48 [INFO] Login successful for user: admin@gmail.com
