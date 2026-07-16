@@ -11,7 +11,7 @@ const verifyAdmin = require("../middleware/verifyAdmin");
 
 
 router.get("/contact",verifyToken,verifyAdmin, contactController.getAllContacts);
-router.post("/contact", verifyToken,verifyAdmin, contactController.createContact);
+router.post("/contact", contactController.createContact);
 
 router.get("/contact/:id", verifyToken, contactController.getContactById);
 
