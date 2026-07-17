@@ -8,7 +8,7 @@ const authRoutes = require('./routes/user');
 const logger = require("./config/logger");
 
 
-const userRoute= require("./routes/student.route");
+const studentRoute= require("./routes/student.route");
 const contactRoute= require("./routes/contact.route");
 
 const helmet = require("helmet");
@@ -44,15 +44,15 @@ app.use(rateLimiter);  // ...then, block them if they don't take the hint.
 
 
 mongoose.connect(process.env.MONGO_DB_URI).then( ()=>{
-        console.log("add new user!");
+        console.log("add new student!");
 }).catch(   (err)=>{
         console.log(err);
 });
 
-app.use("/API/user", userRoute);
+app.use("/API/student", studentRoute);
 app.use("/API/auth", authRoutes);
 app.use("/API/contact", contactRoute);
-app.use("/api/students", require("./routes/student.route"));
+
 app.use("/api/tasks", require("./routes/task.routes"));
 
 
