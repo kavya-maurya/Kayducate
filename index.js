@@ -10,6 +10,7 @@ const logger = require("./config/logger");
 
 const studentRoute= require("./routes/student.route");
 const contactRoute= require("./routes/contact.route");
+const taskRoute= require("./routes/task.routes")
 
 const helmet = require("helmet");
 
@@ -53,7 +54,7 @@ app.use("/API/student", studentRoute);
 app.use("/API/auth", authRoutes);
 app.use("/API/contact", contactRoute);
 
-app.use("/api/tasks", require("./routes/task.routes"));
+app.use("/api/tasks", taskRoute);
 
 
 app.listen(process.env.PORT, ()=>{
