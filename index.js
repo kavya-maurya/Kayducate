@@ -52,6 +52,8 @@ mongoose.connect(process.env.MONGO_DB_URI).then( ()=>{
 app.use("/API/user", userRoute);
 app.use("/API/auth", authRoutes);
 app.use("/API/contact", contactRoute);
+app.use("/api/students", require("./routes/student.route"));
+app.use("/api/tasks", require("./routes/task.routes"));
 
 
 app.listen(process.env.PORT, ()=>{

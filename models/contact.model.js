@@ -14,8 +14,6 @@ phone: { type: String, required: true },
   enum: ["admin", "user"],
   default: "user"
 }
-  
-
 
 
   
