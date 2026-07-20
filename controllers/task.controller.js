@@ -13,8 +13,8 @@ exports.createTask = async (req, res) => {
     }
 
     const task = new Task({
-      ...req.body
-  
+      ...req.body,
+   student: req.user.id
     });
 
     await task.save();
@@ -38,7 +38,7 @@ exports.getAllTasks = async (req, res) => {
   try {
 
     const tasks = await Task.find({
-      student: req.student,
+      student: req.user.id,
     }).sort({
       createdAt: -1,
     });
@@ -60,8 +60,8 @@ exports.getTask = async (req, res) => {
   try {
 
     const task = await Task.findOne({
-      _id: req.params.id,
-      student: req.student,
+       _id: req.params.id,
+      student: req.user.id,
     });
 
     if (!task) {
@@ -89,7 +89,7 @@ exports.updateTask = async (req, res) => {
     const task = await Task.findOneAndUpdate(
       {
         _id: req.params.id,
-        student: req.student,
+        student: req.user.id,
       },
       req.body,
       {
@@ -126,7 +126,7 @@ exports.deleteTask = async (req, res) => {
 
     const task = await Task.findOneAndDelete({
       _id: req.params.id,
-      student: req.student,
+      student: req.user.id,
     });
 
     if (!task) {
