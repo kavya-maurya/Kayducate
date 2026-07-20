@@ -13,8 +13,8 @@ exports.createTask = async (req, res) => {
     }
 
     const task = new Task({
-      ...req.body,
-      student: req.student,
+      ...req.body
+  
     });
 
     await task.save();
