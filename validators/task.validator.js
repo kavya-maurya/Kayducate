@@ -17,6 +17,7 @@ const taskValidation = (data) => {
       .optional(),
 
     dueDate: Joi.date().required(),
+    student: Joi.string()
   });
 
   return schema.validate(data);
