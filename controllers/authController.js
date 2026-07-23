@@ -32,6 +32,7 @@ module.exports = {
         logger.warn(`Login failed: incorrect password for email ${email}`);
         return res.status(400).json({ message: "Credentials are not correct" });
       }
+      
 
       const token = jwt.sign({ id: user._id, email: user.email,role: user.role }, process.env.JWT_SECRET, { expiresIn: "24h" });
       logger.info(`Login successful for user: ${user.email}`);
