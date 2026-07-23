@@ -38,8 +38,8 @@ const rateLimiter = rateLimit({
 });
 
 // 3. Apply them to your app (ORDER IS CRITICAL)
-app.use(speedLimiter); // First, slow them down...
-app.use(rateLimiter);  // ...then, block them if they don't take the hint.
+// app.use(speedLimiter); // First, slow them down...
+// app.use(rateLimiter);  // ...then, block them if they don't take the hint.
 
 
 
