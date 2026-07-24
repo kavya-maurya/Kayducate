@@ -1,0 +1,49 @@
+name: Deploy Kayducate Backend to VPS
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            set -e
+
+            cd /var/www/html/KayducateBackend
+
+            git pull origin main
+
+            npm install
+
+            pm2 restart all
+
+            sudo systemctl reload nginx
+
+            echo "✅ Deployment completed successfully."
+
+      - name: Send ntfy notification
+        if: success()
+        run: |
+          curl -H "Title: 🚀 Kayducate Backend Deployment" \
+               -H "Priority: high" \
+               -d "Deployment to VPS completed successfully." \
+               https://ntfy.sh/kaylynk
+
+      - name: Send failure notification
+        if: failure()
+        run: |
+          curl -H "Title: ❌ Kayducate Backend Deployment Failed" \
+               -H "Priority: urgent" \
+               -d "GitHub Actions deployment failed. Check the workflow logs." \
+               https://ntfy.sh/kaylynk
