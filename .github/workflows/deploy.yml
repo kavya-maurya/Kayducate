@@ -20,24 +20,19 @@ jobs:
           script: |
             set -e
 
+            export NVM_DIR="/root/.nvm"
+            [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
             cd /var/www/html/KayducateBackend
 
-            # Stash local changes (such as .env)
             git stash push -u -m "Auto stash before deployment" || true
-
-            # Get latest code
             git pull origin main
-
-            # Restore local changes
             git stash pop || true
 
-            # Install new dependencies if package.json changed
             npm install
 
-            # Restart PM2 application
-            pm2 restart all
+            /root/.nvm/versions/node/v24.18.0/bin/pm2 restart all
 
-            # Reload Nginx
             sudo systemctl reload nginx
 
             echo "✅ Deployment completed successfully."
